@@ -1,6 +1,13 @@
-<h3 class="widget-title">分类</h3>
+<h3 class="widget-title"><a href="/categories">分类</a></h3>
 <ul class="widget-list">
+    {{ $all := 0 }}
     {{ range .Site.Taxonomies.categories }}
+    {{ $all = (add $all .Count) }}
     <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+    {{ end }}
+    {{if ne $all 0}}
+    <li><a href="#">未分类
+            ({{sub (where (where .Site.Pages "Type" "in" (slice "post" "posts")) "Kind" "page").Len $all}})</a>
+    </li>
     {{ end }}
 </ul>
