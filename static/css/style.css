@@ -66,6 +66,13 @@
 .icon-sina-weibo:before {
     content: "\e60d";
 }
+.fireworks {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+}
 body {
     background-color:#FFF;
     color:#444;

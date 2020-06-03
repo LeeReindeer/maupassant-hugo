@@ -5,6 +5,9 @@
 <body>
     {{ partial "header" . }}
     <div id="body">
+        {{ if .Site.Params.firework }}
+        <canvas class="fireworks"></canvas>
+        {{ end }}
         <div class="container">
             <div class="col-group">
 

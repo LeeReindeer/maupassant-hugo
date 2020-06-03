@@ -11,6 +11,11 @@
 </footer>
 <script type="text/javascript" src='/js/sitedate.js' async=""></script>
 
+{{ if .Site.Params.firework }}
+<script defer="" src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+<script defer="" src="/js/fireworks.js"></script>
+{{end}}
+
 {{ if .IsPage }}
 <!-- graphviz -->
 {{- if and (or .Params.graphviz.enable (and .Site.Params.graphviz.enable (ne .Params.graphviz.enable false))) (or .IsPage .IsHome) -}}
