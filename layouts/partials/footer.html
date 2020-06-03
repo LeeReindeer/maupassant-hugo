@@ -110,6 +110,8 @@
 </script>
 {{- end -}}
 
+<!-- add `mathjax: true` in markdown's meta if using formula -->
+{{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) .IsPage -}}
 <script type="text/javascript">
     window.MathJax = {
         tex2jax: {
@@ -119,6 +121,8 @@
     };
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+{{- end -}}
+
 {{ end }}
 
 <a id="rocket" href="#top"></a>
