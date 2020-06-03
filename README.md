@@ -2,40 +2,38 @@
 
 Maupassant theme, ported to Hugo.
 
-1. 预览效果:[飞雪无情的博客](http://www.flysnow.org)
-2. [English Docs](README_EN.md)
-
 一款非常简洁、性能高的Hugo主题，适配不同的设备（PC，Mobile等）。 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
-
-## Preview
-
-![Maupassant 主题预览](./preview.png "Maupassant 主题预览")
 
 ## 功能特性
 
-1. 支持Local Search 站内搜索
-2. 最近发表的文章支持，显示最近的10篇 
-3. 分类支持，并且可以显示分类内的文章数量
-4. 标签云支持
-5. 文章目录支持
-6. 一键回到页面顶部
-13. 支持关键字SEO优化
-6. 自定义菜单支持，不限个数，自定义排序
-7. 自定义友情链接支持
-8. 支持文章按年份日期进行归档
-9. 支持GA分析统计
-17. 不蒜子页面计数器支持
-11. 代码高亮、代码行号
-10. sitemap站点地图
-5. RSS支持，并且可以自动发现RSS
-14. Google站内搜索
-15. See Also 支持
-16. Disqus评论支持
-18. 自定义css、js
-19. utteranc评论
-20. 部分自定义的shortcode
-21. 文章自定义摘要
-22. 自定义广告支持
+- [Maupassant](#maupassant)
+  - [功能特性](#功能特性)
+  - [下载安装](#下载安装)
+  - [配置](#配置)
+    - [依赖要求](#依赖要求)
+    - [应用主题](#应用主题)
+    - [代码高亮](#代码高亮)
+    - [自定义菜单](#自定义菜单)
+    - [文章目录](#文章目录)
+    - [站内搜索](#站内搜索)
+    - [友情链接](#友情链接)
+    - [~~广告模块~~](#s广告模块s)
+    - [文章归档](#文章归档)
+    - [评论](#评论)
+      - [Disqus](#disqus)
+      - [utteranc](#utteranc)
+    - [版权声明](#版权声明)
+    - [不蒜子页面计数器](#不蒜子页面计数器)
+    - [GA分析统计](#ga分析统计)
+    - [杂项](#杂项)
+      - [自定义文章摘要](#自定义文章摘要)
+      - [关于分类的名称转为小写的问题](#关于分类的名称转为小写的问题)
+      - [禁止URL路径小写](#禁止url路径小写)
+      - [自定义CSS&JS](#自定义cssjs)
+      - [自定义shortcode](#自定义shortcode)
+    - [绘图支持](#绘图支持)
+  - [贡献](#贡献)
+  - [其他平台上的 Maupassant 主题](#其他平台上的-maupassant-主题)
 
 ## 下载安装
 
@@ -46,29 +44,27 @@ git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant
 
 ## 配置
 
-#### 依赖要求
+### 依赖要求
 
 Hugo Version >= v 0.60.0
 
-#### 应用主题
+### 应用主题
 
 ```toml
 theme = "maupassant"
 ```
 
-#### 快速开始
-
 在主题的 [exampleSite](exampleSite/) 示例目录下有`config.toml `文件，把`config.toml `文件复制到你的站点目录下，然后根据自己的需求修改即可
 
+<!--
 **PS: 一定要使用`post`目录，而不是`posts`,一定要记住，所以如果你使用`hugo`命令，你应该`hugo new post/filename.md`这样创建**
 
 **PS: 一定要使用`post`目录，而不是`posts`,一定要记住，所以如果你使用`hugo`命令，你应该`hugo new post/filename.md`这样创建**
 
 **PS: 一定要使用`post`目录，而不是`posts`,一定要记住，所以如果你使用`hugo`命令，你应该`hugo new post/filename.md`这样创建**
+-->
 
-
-
-#### 代码高亮
+### 代码高亮
 
 从Hugo v0.60.0开始，默认使用`Goldmark`渲染MD文件，并且默认开启了代码高亮，所以该主题原来的代码高亮兼容出现问题，
 经过取舍，最终还是选用了Hugo原生的代码高亮方式，去掉了原来主题自带的基于JS的代码高亮。
@@ -88,7 +84,7 @@ theme = "maupassant"
 [Configure Markup](https://gohugo.io/getting-started/configuration-markup)
 [Syntax Highlighting](https://gohugo.io/content-management/syntax-highlighting/)
 
-#### 自定义菜单
+### 自定义菜单
 
 ```toml
 [menu]
@@ -114,7 +110,7 @@ theme = "maupassant"
 
 `identifier`标志符必须是唯一的，不能重复；`weight`用于排序，值越小越靠前。
 
-####  文章目录（大纲）
+### 文章目录
 
 该主题支持文章目录（大纲）,大纲是通过`h1~h7`标题自动生成，在MD文件里就是`##`这类标题的标记，这里建议最多使用两层文章目录，而且最好是从`h2`开始，便于SEO优化。
 如果要开启一篇文章的文章目录，只需要在`Front Matter` 添加`toc=true`即可，默认是不开启文章目录的。
@@ -122,9 +118,10 @@ theme = "maupassant"
 ```toml
 toc = true
 ```
+
 当左侧空白空间宽度超过100px时，则显示悬浮目录。
 
-#### Local Search 站内搜索
+### 站内搜索
 
 站内搜索默认是关闭的，如果需要使用需要以下步骤开启。
 
@@ -142,8 +139,7 @@ type: "search"
 
 然后`hugo server`启动，打开你的站点，就可以在右上角的搜索框里输入关键字进行站内搜索了。
 
-
-#### 友情链接
+### 友情链接
 
 ```toml
 [[params.links]]
@@ -158,7 +154,7 @@ type: "search"
 
 `params.links`是一个数组，所以我们可以自定义很多友情链接。`name`表示显示的链接文本，`title`表示鼠标悬停在友情链接时，显示的文本。
 
-#### 广告模块
+### ~~广告模块~~
 
 广告模块在侧边栏，可以灵活配置，让博主可以放一些超链接广告、或者图片链接广告。
 
@@ -166,29 +162,11 @@ type: "search"
 [[params.ads]]
   title = "领取￥1888阿里云产品通用代金券"
   url = "https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=jdg9oj97"
-
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/act/vmpt/aliyun-group/home.html?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB17qJhXpzqK1RjSZFvXXcB7VXa-200-126.jpg"
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB1aDXhXpzqK1RjSZFvXXcB7VXa-259-194.jpg"
 ```
 
 `params.ads`是一个数组，所以我们可以自定义很多广告。如果`img`存在，则优先使用图片广告,`title`表示鼠标悬停在广告链接时，显示的文本。
 
-具体效果参考 [http://www.flysnow.org/](http://www.flysnow.org/)
-
-#### 添加GA分析统计
-
-该主题已经支持了GA分析统计，只需要在`config.toml`配置里加入如下配置即可。
-```toml
-googleAnalytics = "GA ID"
-```
-
-#### 文章归档支持
+### 文章归档
 
 Hugo默认是不支持生成归档文件的，需要自己实现。该主题已经实现了文章归档，只需要在新建`content/archives/index.md`文件，文件内容为：
 
@@ -202,6 +180,8 @@ type: archives
 
 `content/archives/index.md`表示在`content/archives/`目录下的`index.md`文件
 
+### 评论
+
 #### Disqus
 
 该主题支持Disqus评论，如果要启用Disqus，可以在`config.toml`里添加如下配置即可.
@@ -211,27 +191,6 @@ disqusShortname = "yourdiscussshortname"
 ```
 
 替换成你自己的Disqus名字即可。
-
-#### 自定义文章摘要
-
-该主题采用了Hugo内置的摘要支持，大家可以通过`<!--more-->`自定义自己的摘要，也可以使用自动摘要，使用自动摘要时，可以在`config.toml`中设置摘要的长度
-
-```toml
-# 默认是70
-summaryLength = 140 
-```
-
-#### 开启版权声明
-
-该主题支持开启版权声明，如果要启用版权声明，可以在`config.toml`里添加如下配置即可。
-
-```toml
-[params.cc]
-    name = "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"
-    link = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-```
-
-其中`name`和`link`可以换成自己使用的版权声明协议和链接
 
 #### utteranc
 
@@ -252,13 +211,44 @@ summaryLength = 140
 
 其他还有几个不常用，这里就不再赘述了。
 
-#### 不蒜子页面计数器支持
+
+### 版权声明
+
+该主题支持开启版权声明，如果要启用版权声明，可以在`config.toml`里添加如下配置即可。
+
+```toml
+[params.cc]
+    name = "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"
+    link = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+```
+
+其中`name`和`link`可以换成自己使用的版权声明协议和链接
+
+### 不蒜子页面计数器
 
 该主题支持不蒜子这个极简的页面计数器支持，如果要启用不蒜子，可以在`config.toml`里添加如下配置即可.
 
 ```toml
 [params]
   busuanzi = true
+```
+
+### GA分析统计
+
+该主题已经支持了GA分析统计，只需要在`config.toml`配置里加入如下配置即可。
+```toml
+googleAnalytics = "GA ID"
+```
+
+### 杂项
+
+#### 自定义文章摘要
+
+该主题采用了Hugo内置的摘要支持，大家可以通过`<!--more-->`自定义自己的摘要，也可以使用自动摘要，使用自动摘要时，可以在`config.toml`中设置摘要的长度
+
+```toml
+# 默认是70
+summaryLength = 140
 ```
 
 #### 关于分类的名称转为小写的问题
@@ -288,7 +278,7 @@ disablePathToLower = true
   # if ['custom.js'], load '/static/js/custom.js' file
 ```
 
-#### 添加了部分自定义的shortcode
+#### 自定义shortcode
 
 * Octopress blockquote (blockquote.html)
 * Wikipedia Link Generator (wp.html)
@@ -298,25 +288,27 @@ disablePathToLower = true
 ```
 
 * youku（youku.html）
-#### 绘图支持
+
+### 绘图支持
+
 - 序列图(使用[js-sequence](https://bramp.github.io/js-sequence-diagrams/))
   1. 全局使用，在`config.toml`中添加如下配置
-  
+
      ```toml
      [params.sequenceDiagrams]
          enable = true
          options = ""            # default: "{theme: 'simple'}"
      ```
-     
+
   2. 每篇文章单独设置，在`Front Matter` 添加如下内容
-  
+
      ```yaml
      sequenceDiagrams
        enable: true
      ```
-  
+
    将代码块的语言标识符设置为`sequence`。例如
-  
+
   ```
   ​```sequence
   Alice->Bob: Hello Bob, how are you?
@@ -324,39 +316,39 @@ disablePathToLower = true
   Bob-->Alice: I am good thanks!
   ​```
   ```
-  
+
 - 流程图（使用[flowchart.js](http://flowchart.js.org/)）
   1. 全局使用，在`config.toml`中添加如下配置
-  
+
      ```tom
      [params.flowchartDiagrams]
        enable = true
        options = ""
      ```
-     
+
   2. 每篇文章单独设置，在`Front Matter` 添加如下内容
-  
+
      ```yaml
      flowchartDiagrams:
        enable: true
      ```
-  
-  
+
+
    将代码块的语言标识符设置为`flowchat`或者`flow`。例如
-  
+
    ```
   ​```flow
   st=>start: Start
   op=>operation: Your Operation
   cond=>condition: Yes or No?
   e=>end
-  
+
   st->op->cond
   cond(yes)->e
   cond(no)->op
   ​```
    ```
-  
+
 - graphviz（[viz.js](https://github.com/mdaines/viz.js))
 
   需要对每篇文章单独设置是否启用，在`Front Matter` 添加如下内容
@@ -367,11 +359,11 @@ disablePathToLower = true
   ```
 
   将代码块的语言标识符设置为`viz-<engin>`， engin是选用的graphviz绘图引擎的名称，包括`circo`、`dot`、`fdp`、`neato` 、`osage`和`twopi`。例如
-  
+
   ```
   ​```viz-dot
   digraph G {
-  
+
   	subgraph cluster_0 {
   		style=filled;
   		color=lightgrey;
@@ -379,7 +371,7 @@ disablePathToLower = true
   		a0 -> a1 -> a2 -> a3;
   		label = "process #1";
   	}
-  
+
   	subgraph cluster_1 {
   		node [style=filled];
   		b0 -> b1 -> b2 -> b3;
@@ -393,7 +385,7 @@ disablePathToLower = true
   	a3 -> a0;
   	a3 -> end;
   	b3 -> end;
-  
+
   	start [shape=Mdiamond];
   	end [shape=Msquare];
   }
