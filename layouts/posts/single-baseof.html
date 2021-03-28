@@ -14,8 +14,13 @@
         <div class="col-8" id="main">
           {{ block "content" . }}{{ end }}
         </div>
-        <!-- remove sidebar in single post page -->
-        <!-- {{ partial "sidebar" . }} -->
+        <!-- remove sidebar in single post page with toc-->
+        <!-- page's toc open or (site's toc open and page's toc is not false)-->
+        {{ if or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) }}
+        {{ else }}
+        <!-- no toc show sidebar -->
+        {{ partial "sidebar" . }}
+        {{ end }}
       </div>
     </div>
   </div>
