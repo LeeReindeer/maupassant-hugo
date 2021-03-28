@@ -75,7 +75,8 @@
 }
 body {
     background-color:#FFF;
-    color:#444;
+    /* color:#444; */
+    color: #2e405b;
     font-size: 15px;
     /**
     font-family:"TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
@@ -83,8 +84,9 @@ body {
    /**
     font-family: "Iowan Old Style", "Ovo", "Hoefler Text", Georgia, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif;
     **/
-   font-family: georgia,times,serif, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif;
-    /**-webkit-font-smoothing: antialiased;**/
+   /* font-family: georgia,times,serif, "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular", "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback", "WenQuanYi Micro Hei", sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    font-family: roboto mono,lato,pingfang sc,microsoft yahei,sans-serif;
     -moz-osx-font-smoothing: grayscale;
 }
 img{
@@ -139,7 +141,7 @@ blockquote::before{
     font-family: times;
     font-style: normal;
     font-size: 48px;
-    color: #444;
+    color: #2e405b;
     font-weight: bold;
     line-height: 30px;
     margin-left: -50px;
@@ -235,7 +237,7 @@ textarea {
     padding:0 1em;
     height:32px;
     line-height:32px;
-    color:#444;
+    color:#2e405b;
 }
 #nav-menu a:first-child {
     border:none;
@@ -267,12 +269,17 @@ textarea {
     padding:14px 0;
     width:auto;
     height:48px;
-    color:#444;
+    color:#2e405b;
     background:none;
 }
 .col-8 {
-    width:800px;
+    width:860px;
 }
+
+.col-10 {
+    width: 1000;
+}
+
 .col-12{
     width: 100%;
 }
@@ -375,10 +382,12 @@ textarea {
     border-color: transparent #555 transparent transparent;
 }
 .post-content {
-    font-size: 1.25em;
-    line-height: 1.7;
-    color:#444;
+    font-size: 1.2em;
+    line-height: 1.8;
+    letter-spacing: 0.6px;
+    color: #2e405b;
     padding-top:27px;
+    word-wrap: break-word;
 }
 .post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6 {
     color: #ba3925;
@@ -493,7 +502,7 @@ textarea {
 .comment-author {
     display:block;
     margin-bottom:3px;
-    color:#444;
+    color:#2e405b;
 }
 .comment-author .avatar {
     float:left;
@@ -744,7 +753,7 @@ img.alignright {
     border-radius: 50px;
     text-align: center;
     cursor: pointer;
-    background: #444;
+    background: #2e405b;
     font-weight: 500;
     line-height: 14px;
     letter-spacing: 1px;
@@ -807,6 +816,7 @@ img.alignright {
     }
     .post-content {
         font-size: 16px;
+        letter-spacing: 0.5px;
     }
 }
 @media print, screen and (max-width:860px) {
@@ -937,7 +947,7 @@ img.alignright {
 }
 .post-archive h2 {
       margin: 0;
-      font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+      font: bold 25px / 1.1;
 }
 .post-archive .date {
       padding-right: .7em;
@@ -1006,7 +1016,7 @@ img.alignright {
 /* read more*/
 .readmore a {
     font-size: 14px;
-    color: #444;
+    color: #2e405b;
     margin: -10px 0;
     padding: 5px 10px;
     border: 1px solid #ddd;

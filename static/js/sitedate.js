@@ -19,5 +19,5 @@ setInterval(function () {
   var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
   var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
   var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-  document.getElementById('showDays').innerHTML = "本站已萌萌哒运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+  document.getElementById('showDays').innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
 }, 1000);

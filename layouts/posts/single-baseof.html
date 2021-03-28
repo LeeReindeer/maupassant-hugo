@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}zh-CN{{end}}">
+{{ partial "head" . }}
+
+<body>
+  {{ partial "header" . }}
+  <div id="body">
+    {{ if .Site.Params.firework }}
+    <canvas class="fireworks"></canvas>
+    {{ end }}
+    <div class="container">
+      <div class="col-group">
+
+        <div class="col-8" id="main">
+          {{ block "content" . }}{{ end }}
+        </div>
+        <!-- remove sidebar in single post page -->
+        <!-- {{ partial "sidebar" . }} -->
+      </div>
+    </div>
+  </div>
+  {{ partial "footer" . }}
+</body>
+
+</html>
