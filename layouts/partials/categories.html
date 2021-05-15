@@ -6,6 +6,7 @@
     <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
     {{ end }}
     {{if ne $all 0}}
+    <!-- 所有文章减去有标签的文章 -->
     <li><a href="#">未分类
             ({{sub (where (where .Site.Pages "Type" "in" (slice "post" "posts")) "Kind" "page").Len $all}})</a>
     </li>

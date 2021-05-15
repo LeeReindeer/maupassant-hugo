@@ -1,6 +1,18 @@
-<h3 class="widget-title"><a href="/tags">标签</a></h3>
+<h3 class="widget-title"><a href='{{ "tags/" | relURL }}'>标签</a></h3>
+{{ $fontUnit := "rem" }}
+{{ $largestFontSize := 1.8 }}
+{{ $smallestFontSize := 0.8 }}
+{{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+{{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+{{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+{{ $spread := sub $max $min }}
+{{ $fontStep := div $fontSpread $spread }}
 <div class="tagcloud">
     {{ range .Site.Taxonomies.tags }}
-    <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+    {{ $currentFontSize := (add $smallestFontSize (mul (sub .Count $min) $fontStep) ) }}
+    {{ $count := .Count }}
+    {{ $weigth := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+    {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
+    <a href="{{ .Page.Permalink }}" style="font-size:{{$currentFontSize}}{{$fontUnit}}">{{ .Page.Title }}</a>
     {{ end }}
 </div>
